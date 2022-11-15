@@ -1,7 +1,11 @@
 import {React} from "react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom'
-
+import Home from "./components/home";
+import Ducklings from "./components/ducklings";
+import Puppies from "./components/puppies";
+import Kittens from "./components/kittens";
+import PetForm from "./components/PetForm";
 export default function App() {
   return (
     <Router>
@@ -10,6 +14,7 @@ export default function App() {
         <li><Link to="/kittens"> Kittens </Link></li>
         <li><Link to="/puppies"> Puppies </Link></li>
         <li><Link to="/ducklings"> Ducklings </Link></li>
+        <li><Link to="/aboutuspage"> About Us Page</Link></li>
       </ul>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -23,43 +28,12 @@ export default function App() {
         <Route path="/" element={<Home/>} />
         <Route path="ducklings" element={<Ducklings />} />
       </Routes>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="petform" element={<PetForm />} />
+      </Routes>
   </Router>
   );
 }
-
-function Home() {
-  return <>
-          <h1>All Pets</h1>
-          <section>This is the page for all your pet needs</section>
-          <img src="imgs/kitten.jpg" alt="Kitten"/>
-          <img src="imgs/puppy.jpg" alt="Puppy"/>
-          <img src="imgs/duckling.jpg" alt="Duckling"/>
-        </>
-}
-
-function Kittens() {
-  return <>
-      <h1>Kittens</h1>
-      <section>This is the cats page</section>
-      <img src="imgs/kitten.jpg" alt="Kitten"/>
-    </>
-}
-
-function Puppies() {
-  return <>
-      <h1>Puppies</h1>
-      <section>This is the Puppies page</section>
-      <img src="imgs/puppy.jpg" alt="Puppy"/>
-    </>
-}
-
-function Ducklings() {
-  return <>
-      <h1>Ducklings</h1>
-      <section>This is the Duckling page</section>
-      <img src="imgs/duckling.jpg" alt="Duckling"/>
-    </>
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);
