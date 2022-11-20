@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const name = '[YOUR NAME GOES HERE]';
+const name = 'M. Claire';
 
 function Profile(name){
-    return <main id="content" role="main" className="base">
-            <h1>{name}'s React Page</h1>
-              <p>Example of react JSX in action</p>
+            if (name) {
+              return <main id='content' role= "main" className="base">
+                <h1>{name}'s React Page</h1>
+                <p>I am learning react</p>
+                </main>
+              
+            }
+            return <main id='content' role="main" className='base'>
+            <h1>Justa  React Page</h1>
+            <p>Nothing to see here!</p>
             </main>
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(Profile());
+ReactDOM.render(
+  [
+    Profile(name),
+    Profile()
+  ],document.getElementById('root')
+);
 
