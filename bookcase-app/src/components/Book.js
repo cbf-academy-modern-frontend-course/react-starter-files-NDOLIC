@@ -1,7 +1,17 @@
-import React from 'react';
+import React from "react";
 
-function Book() {
-  return "This is the output of a book component. Replace this string with code to display an individual book's attributes.";
+
+
+//const [books] = useState(data);
+const Book = (props) => {
+  return (
+    <div>
+      {
+        <h2> {props.book.volumeInfo.title}</h2>
+      }
+
+    </div>
+  );
 }
+export default Book
 
-export default Book;
