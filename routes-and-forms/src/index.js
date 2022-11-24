@@ -6,6 +6,7 @@ import Ducklings from "./components/ducklings";
 import Puppies from "./components/puppies";
 import Kittens from "./components/kittens";
 import PetForm from "./components/PetForm";
+import Aboutuspage from "./components/aboutuspage";
 export default function App() {
   return (
     <Router>
@@ -15,22 +16,25 @@ export default function App() {
         <li><Link to="/puppies"> Puppies </Link></li>
         <li><Link to="/ducklings"> Ducklings </Link></li>
         <li><Link to="/aboutuspage"> About Us Page</Link></li>
+        <li><Link to="/petform"> PetForm</Link></li>
       </ul>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="kittens" element={<Kittens />} />
       </Routes>
       <Routes>
-        <Route path="/" element={<Home/>} />
         <Route path="puppies" element={<Puppies />} />
       </Routes>
       <Routes>
-        <Route path="/" element={<Home/>} />
         <Route path="ducklings" element={<Ducklings />} />
       </Routes>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="kittens" element={<Kittens />} />
+      </Routes>
+      <Routes>
         <Route path="petform" element={<PetForm />} />
+      </Routes>
+      <Routes>
+        <Route path="aboutuspage" element={<Aboutuspage />} />
       </Routes>
   </Router>
   );
