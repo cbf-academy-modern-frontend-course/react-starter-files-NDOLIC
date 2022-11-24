@@ -5,6 +5,7 @@ import data from "./models/books.json";
 import BookList from "./components/BookList";
 import Header from "./components/Header";
 import About from ".pages/About"
+import Search from "./components/Search";
 import "./index.css";
 
 const App = (props) => {
@@ -14,14 +15,8 @@ const App = (props) => {
           <>
           <Header />
           <h2> Welcome to the Bookcase App</h2>
-          <BookList books={books} />
-          </>
-        )} />
-        <Route exact path="/" render={() => (
-          <>
+          <Search />
           <BookList/>
-          <h2> Welcome to the Bookcase App</h2>
-          <BookList books={books}/>
           </>
         )} />
         <Route exact path="/" element={About}></Route>
